@@ -48,3 +48,105 @@ Built with a **Retrieval-Augmented Generation (RAG)** architecture to ensure res
                                                             |
                                                  [ Curated Knowledge Base ]
 
+# 🚀 Setup & Installation
+
+## **Prerequisites**
+- Python **3.9+**
+- Node.js **v18+** and npm
+
+---
+
+## **Backend Setup**
+
+```bash
+# Clone the repository
+git clone <your-repository-url>
+cd eco-anxiety-ai
+
+# Create and activate virtual environment (macOS/Linux)
+python3 -m venv venv
+source venv/bin/activate
+
+# On Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+Set up your API key(s):
+
+Create a .env file in the root of the backend folder.
+
+Add your API keys:
+
+env
+Copy
+Edit
+GROQ_API_KEY="gsk_YourSecretGroqKeyGoesHere"
+OPENAI_API_KEY="sk-YourOpenAIKey"
+Build the Vector Database:
+
+Temporarily modify app/core.py to call create_vector_db() (as done during development).
+
+Run:
+
+bash
+Copy
+Edit
+python app/core.py
+A chroma_db folder will be created.
+
+Revert the changes in app/core.py.
+
+Frontend Setup
+bash
+Copy
+Edit
+cd ../frontend  # Navigate to frontend folder
+npm install
+▶️ Running the Application
+Open two terminal windows:
+
+1. Run Backend
+bash
+Copy
+Edit
+cd eco-anxiety-ai
+uvicorn app.main:app --reload
+Backend runs at: http://localhost:8000
+
+2. Run Frontend
+bash
+Copy
+Edit
+cd frontend
+npm start
+Frontend opens at: http://localhost:3000
+
+You can now interact with the chatbot in your browser.
+
+🗺️ Roadmap
+Phase 4: Analytics & Deployment
+
+PostgreSQL for anonymized analytics
+
+Cloud deployment (Render, Vercel)
+
+User feedback system
+
+Phase 5: Advanced Features & Personalization
+
+Personalized recommendation engine
+
+"Mood to Action" structured journey planner
+
+User accounts with saved progress
+
+Fine-tuned open-source model specialized for eco-anxiety
+
+📜 License
+This project is licensed under the MIT License.
+
+css
+Copy
+Edit
